@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-light);
+    background-color: var(--color-accent-dark-second);
+    font-size: px-to-rem(17);
+}
+
+h2{
+    font-size: px-to-rem(36);
+    font-weight: 700;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.font-lighter{
+    font-weight: 400;
+}
+.text-accent{
+    color: var(--color-accent);
+}
+.border{
+    border: px-to-rem(1) solid var(--color-accent);
+}
+
+
