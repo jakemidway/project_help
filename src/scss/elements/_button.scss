@@ -1,0 +1,22 @@
+.button {
+    border: 1px solid var(--color-accent);
+    color: var(--color-text-dark);
+    background: var(--color-accent);
+    padding: px-to-rem(16) px-to-rem(36);
+    font-size: px-to-rem(22);
+    font-weight: 700;
+    line-height: px-to-rem(27);
+    
+    @include transition-time(1);
+
+    &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-accent-dark);
+    }
+
+    &:active {
+        border: 1px solid var(--color-accent);
+        color: var(--color-accent);
+        background: inherit;
+    }
+}

@@ -419,7 +419,8 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--color-text-light);
   background-color: var(--color-accent-dark-second);
-  font-size: 1.0625rem;
+  font-size: 1rem;
+  line-height: 1.1875rem;
 }
 
 h2 {
@@ -447,3 +448,89 @@ li {
 .border {
   border: 0.0625rem solid var(--color-accent);
 }
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 1.25rem;
+}
+
+.button {
+  border: 1px solid var(--color-accent);
+  color: var(--color-text-dark);
+  background: var(--color-accent);
+  padding: 1rem 2.25rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.6875rem;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.button:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-dark);
+}
+
+.button:active {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  background: inherit;
+}
+
+.header {
+  position: relative;
+  background-image: url(./../images/header/image-header.png);
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: 100% 0;
+  padding: 2.5rem 0 9rem;
+  z-index: -2;
+}
+
+.header__content {
+  position: relative;
+  width: 50%;
+}
+
+.header__lang-menu {
+  margin-bottom: 4.375rem;
+}
+
+.header__lang-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__lang-menu-item {
+  margin-right: 2.3125rem;
+}
+
+.header__title {
+  font-size: 2.75rem;
+  line-height: 3.3125rem;
+  margin: 0 0 1rem;
+}
+
+.header__text {
+  margin-bottom: 1.75rem;
+}
+
+.header::after {
+  display: block;
+  content: "sdfs";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170%;
+  background: var(--color-accent-dark-second);
+  -webkit-transform: rotate(-45deg) translate(-32%, -49%);
+      -ms-transform: rotate(-45deg) translate(-32%, -49%);
+          transform: rotate(-45deg) translate(-32%, -49%);
+}
+
+.webp .header { background-image: url(./../images/header/image-header.webp); }

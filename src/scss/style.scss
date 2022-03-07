@@ -12,16 +12,16 @@
 
 
 // layout classes (.container) & extends
-
+@import 'layout/containers';
 
 //libraries
 
 
 //elements; - small BEM  blocks
-
+@import 'elements/button';
 
 //components; - middle BEM blocks
-
+@import 'components/header';
 
 // sections - big BEM  blocks
 
