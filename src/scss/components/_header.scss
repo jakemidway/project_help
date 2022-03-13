@@ -3,26 +3,7 @@
     padding: px-to-rem(40) 0 px-to-rem(144);
     overflow: hidden;
 
-    &__content {
-        position: relative;
-        width: 50%;
-    }
 
-    &__content-bg{
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 20%;
-        width: 600px;
-        height: 600px;
-        background: var(--color-accent-dark-second);
-        transform: rotate(-45deg);
-        z-index: 80;
-    }
-    &__content-layer{
-        position: relative;
-        z-index: 100;
-    }
     &__lang-menu {
         margin-bottom: px-to-rem(70);
     }
@@ -35,26 +16,136 @@
         margin-right: px-to-rem(37);
     }
 
+    &__lang-menu-item {
+        position: relative;
+        letter-spacing: px-to-rem(2);
+        padding: 0 px-to-rem(2) px-to-rem(6);
+        color: var(--color-accent-dark-light);
+
+        &:after {
+            position: absolute;
+            bottom: px-to-rem(-3);
+            display: block;
+            content: '';
+            left: 50%;
+            width: 0;
+            height: px-to-rem(3);
+            background-color: var(--color-accent);
+            opacity: 0;
+            transition: all 0.2s ease-in;
+        }
+
+        &:hover {
+            color: var(--color-accent);
+
+            &.header__lang-menu-item:after {
+                width: 100%;
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        &_active {
+            color: var(--color-text-light);
+            font-weight: bold;
+
+            &::after {
+                position: absolute;
+                bottom: px-to-rem(-3);
+                display: block;
+                content: '';
+                left: 0;
+                width: 100%;
+                height: px-to-rem(3);
+                background-color: var(--color-accent);
+                opacity: 1;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        width: 50%;
+    }
+
+    &__content-bg {
+        display: none;
+
+        @include for-big-desktop-up {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 29%;
+            width: 600px;
+            height: 600px;
+            background: var(--color-accent-dark-second);
+            transform: rotate(-45deg);
+            z-index: 80;
+        }
+
+    }
+
+    &__content-layer {
+        position: relative;
+        z-index: 100;
+    }
+
     &__title {
+        color: var(--color-text-light);
         font-size: px-to-rem(44);
         line-height: px-to-rem(53);
         margin: 0 0 px-to-rem(16);
+        @include for-big-desktop-up{
+            color: var(--color-text-light);
+        }
     }
 
     &__text {
+        color: var(--color-accent-dark-light);
         margin-bottom: px-to-rem(28);
     }
 
     &__bg-layer {
         position: absolute;
-        border: 1px dotted red;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--color-accent-dark-second);
-        background-image: url(./../images/header/image-header.png);
-        background-repeat: no-repeat;
-        background-size: 60%;
-        background-position: 100% 0;
+
     }
+
+    &__layer-left {
+        display: none;
+
+        @include for-big-desktop-up {
+            display: block;
+            height: 100%;
+            width: 40%;
+            position: absolute;
+            background-color: var(--color-accent-dark-second);
+        }
+    }
+
+    &__layer-right {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        background-color: var(--color-accent-dark-second);
+        background-image: url(./../images/header/image-header-mob.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+
+        @include for-tablet-landscape-up{
+            background-image: url(./../images/header/image-header.png);
+            background-position: 100% 0;
+        }
+
+        @include for-big-desktop-up {
+            height: 100%;
+            width: 60%;
+        }
+    }
+
+
 }
